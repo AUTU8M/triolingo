@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/pages/iAm_duo.dart';
 import 'package:triolingo/widgets/duolingo_logo.dart';
+import 'package:triolingo/widgets/outlinedtypa_button.dart';
+import 'package:triolingo/widgets/primary_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -20,6 +23,27 @@ class LoginPage extends StatelessWidget {
                     WelcomeText(),
                   ],
                 ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+              child: Column(
+                children: [
+                  PrimaryButton(
+                    text: 'GET STARTED',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const IamDuo()),
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  OutlinedtypaButton(
+                    text: 'I ALREADY HAVE AN ACCOUNT',
+                    onPressed: () {},
+                  ),
+                ],
               ),
             ),
           ],

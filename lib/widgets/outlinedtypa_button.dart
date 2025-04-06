@@ -18,10 +18,7 @@ class OutlinedtypaButton extends StatelessWidget {
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           foregroundColor: Pallete.buttonMainColor,
-          side: BorderSide(
-            color: Color.fromARGB(255, 135, 219, 71),
-            width: 1.5,
-          ),
+          side: BorderSide(color: Color.fromARGB(255, 66, 66, 65), width: 1.7),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
