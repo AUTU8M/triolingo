@@ -1,38 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:triolingo/theme/pallete.dart';
 
-class DuolingoLogo extends StatefulWidget {
-  const DuolingoLogo({super.key});
+class DuolingoLogo extends StatelessWidget {
+  final String assetPath;
+  final double height;
+  final double width;
 
-  @override
-  State<DuolingoLogo> createState() => _DuolingoLogoState();
-}
+  const DuolingoLogo({
+    super.key,
+    required this.assetPath,
+    this.height = 100,
+    this.width = 100,
+  });
 
-class _DuolingoLogoState extends State<DuolingoLogo> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        //owl image
-        SvgPicture.asset(
-          'assets/images/duo_birds/duobirdDefult.svg',
-          height: 100,
-          width: 100,
-        ),
-
-        const SizedBox(height: 10),
-        Text(
-          'triolingo',
-          style: TextStyle(
-            fontFamily: 'Feather',
-            fontSize: 40,
-            color: Pallete.buttonMainColor,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.2,
-          ),
-        ),
-      ],
-    );
+    return SvgPicture.asset(assetPath, height: height, width: width);
   }
 }
