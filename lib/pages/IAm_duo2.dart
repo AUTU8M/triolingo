@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:triolingo/pages/IAm_duo2.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
-class IamDuo extends StatefulWidget {
-  const IamDuo({super.key});
+class IamDuo2 extends StatefulWidget {
+  const IamDuo2({super.key});
 
   @override
-  State<IamDuo> createState() => _IamDuoState();
+  State<IamDuo2> createState() => _IamDuoState();
 }
 
-class _IamDuoState extends State<IamDuo> {
+class _IamDuoState extends State<IamDuo2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,12 +26,15 @@ class _IamDuoState extends State<IamDuo> {
                 // Speech Bubble using the reusable widget
                 const Positioned(
                   top: -40,
-                  child: PopupTextMessage(message: 'Hi there, im duo, '),
+                  child: PopupTextMessage(
+                    message:
+                        'Just 7 quick question before we start first lesson! ',
+                  ),
                 ),
 
                 // Image (PNG or SVG)
                 SvgPicture.asset(
-                  'assets/images/duo_birds/duobirdbg1.svg', // Replace with your own image path
+                  'assets/images/duo_birds/duobird8.svg', // Replace with your own image path
                   width: 200,
                 ),
               ],
@@ -42,15 +44,7 @@ class _IamDuoState extends State<IamDuo> {
           const Expanded(flex: 1, child: SizedBox()),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => IamDuo2()),
-                );
-              },
-            ),
+            child: PrimaryButton(text: 'CONTINUE', onPressed: () {}),
           ),
         ],
       ),
