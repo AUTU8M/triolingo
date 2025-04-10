@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:triolingo/pages/progressbar/progress_bar_one.dart';
+import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
@@ -33,9 +35,10 @@ class _IamDuoState extends State<IamDuo2> {
                 ),
 
                 // Image (PNG or SVG)
-                SvgPicture.asset(
-                  'assets/images/duo_birds/duobird8.svg', // Replace with your own image path
+                DuolingoLogo(
+                  assetPath: 'assets/images/duo_birds/duobird8.svg',
                   width: 200,
+                  height: 250,
                 ),
               ],
             ),
@@ -44,7 +47,15 @@ class _IamDuoState extends State<IamDuo2> {
           const Expanded(flex: 1, child: SizedBox()),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(text: 'CONTINUE', onPressed: () {}),
+            child: PrimaryButton(
+              text: 'CONTINUE',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProgressBarOne()),
+                );
+              },
+            ),
           ),
         ],
       ),
