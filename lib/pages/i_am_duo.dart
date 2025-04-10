@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:triolingo/pages/IAm_duo2.dart';
+import 'package:triolingo/pages/I_am_duo2.dart';
+import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
@@ -31,9 +32,10 @@ class _IamDuoState extends State<IamDuo> {
                 ),
 
                 // Image (PNG or SVG)
-                SvgPicture.asset(
-                  'assets/images/duo_birds/duobirdbg1.svg', // Replace with your own image path
+                DuolingoLogo(
+                  assetPath: 'assets/images/duo_birds/duobirdbg1.svg',
                   width: 200,
+                  height: 200,
                 ),
               ],
             ),
