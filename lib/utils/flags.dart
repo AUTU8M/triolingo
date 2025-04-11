@@ -18,8 +18,6 @@ final List<LanguageItem> languageItems = [
   LanguageItem(name: 'जर्मन', countryCode: 'DE'),
   LanguageItem(name: 'संगीत', icon: Icons.music_note),
   LanguageItem(name: 'गणित', icon: Icons.calculate),
-  LanguageItem(name: 'तामिल', countryCode: 'IN'),
-  LanguageItem(name: 'बांग्ला', countryCode: 'IN'),
 ];
 
 final List<LanguageItem> languageItemsEng = [
