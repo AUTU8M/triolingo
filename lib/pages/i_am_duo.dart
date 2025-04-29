@@ -16,7 +16,7 @@ class _IamDuoState extends State<IamDuo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Color.fromRGBO(19, 31, 34, 1),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
