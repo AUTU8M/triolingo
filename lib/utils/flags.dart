@@ -1,6 +1,7 @@
 // language_item.dart (or put it in the same file)
 import 'package:flutter/material.dart';
 
+// Language item class
 class LanguageItem {
   final String name;
   final String? countryCode;
@@ -9,6 +10,7 @@ class LanguageItem {
   LanguageItem({required this.name, this.countryCode, this.icon});
 }
 
+// List of language items
 final List<LanguageItem> languageItems = [
   LanguageItem(name: 'अंग्रेज़ी', countryCode: 'US'),
   LanguageItem(name: 'स्पैनिश', countryCode: 'ES'),
