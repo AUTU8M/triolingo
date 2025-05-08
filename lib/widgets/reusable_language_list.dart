@@ -1,13 +1,10 @@
-// ignore_for_file: avoid_print
-
-import 'package:flutter/material.dart';
 import 'package:country_flags/country_flags.dart';
+import 'package:flutter/material.dart';
 import 'package:triolingo/utils/language_item.dart';
 
 class ReusableLanguageList extends StatelessWidget {
-  // This now refers to the LanguageItem class imported above
   final List<LanguageItem> items;
-  final String? listTitle; // Optional title for the list
+  final String? listTitle;
   final Color itemBackgroundColor;
   final Color itemBorderColor;
   final double itemBorderWidth;
@@ -21,14 +18,9 @@ class ReusableLanguageList extends StatelessWidget {
     super.key,
     required this.items,
     this.listTitle,
-    this.itemBackgroundColor = const Color.fromRGBO(
-      19,
-      31,
-      34,
-      1,
-    ), // Dark background like Duolingo
+    this.itemBackgroundColor = const Color.fromRGBO(19, 31, 34, 1),
     this.itemBorderColor = Colors.transparent, // No border by default
-    this.itemBorderWidth = 0,
+    this.itemBorderWidth = 1,
     this.itemBorderRadius = 8.0, // Rounded corners
     this.itemPadding = const EdgeInsets.symmetric(
       horizontal: 16.0,
@@ -60,7 +52,7 @@ class ReusableLanguageList extends StatelessWidget {
               child: Text(
                 listTitle!,
                 style: const TextStyle(
-                  color: Colors.grey, // Grey color for the title
+                  color: Colors.white,
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -76,7 +68,7 @@ class ReusableLanguageList extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16.0,
-                    vertical: 4.0,
+                    vertical: 7.0,
                   ), // Add vertical spacing between items
                   child: InkWell(
                     // Use InkWell for tap effect

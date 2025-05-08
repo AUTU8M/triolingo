@@ -1,16 +1,9 @@
-// language_item.dart (or put it in the same file)
 import 'package:flutter/material.dart';
+import 'package:triolingo/utils/language_item.dart'; // Needed for Icons like music_note, calculate
+// <-- Import the LanguageItem class from its new location
 
-class LanguageItem {
-  final String name;
-  final String? countryCode;
-  final IconData? icon;
-
-  LanguageItem({required this.name, this.countryCode, this.icon});
-}
-
-final List<LanguageItem> languageItems = [
-  LanguageItem(name: 'अंग्रेज़ी', countryCode: 'US'),
+final List<LanguageItem> languageItemsHindi = [
+  LanguageItem(name: 'इंग्लिश', countryCode: 'US'),
   LanguageItem(name: 'स्पैनिश', countryCode: 'ES'),
   LanguageItem(name: 'इतालवी', countryCode: 'IT'),
   LanguageItem(name: 'जापानी', countryCode: 'JP'),
