@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:triolingo/pages/I_am_duo2.dart';
+
 import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
@@ -16,7 +16,7 @@ class _IamDuoState extends State<IamDuo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Color.fromRGBO(19, 31, 34, 1),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
@@ -49,7 +49,7 @@ class _IamDuoState extends State<IamDuo> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => IamDuo2()),
+                  MaterialPageRoute(builder: (context) => IAmDuo2()),
                 );
               },
             ),

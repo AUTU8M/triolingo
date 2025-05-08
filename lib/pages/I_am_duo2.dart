@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-
 import 'package:triolingo/pages/progressbar/progress_bar_one.dart';
 import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
-class IamDuo2 extends StatefulWidget {
-  const IamDuo2({super.key});
+class IAmDuo2 extends StatefulWidget {
+  const IAmDuo2({super.key});
 
   @override
-  State<IamDuo2> createState() => _IamDuoState();
+  State<IAmDuo2> createState() => _IAmDuo2State();
 }
 
-class _IamDuoState extends State<IamDuo2> {
+class _IAmDuo2State extends State<IAmDuo2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Color.fromRGBO(19, 31, 34, 1),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
@@ -30,15 +29,15 @@ class _IamDuoState extends State<IamDuo2> {
                   top: -40,
                   child: PopupTextMessage(
                     message:
-                        'Just 7 quick question before we start first lesson! ',
+                        'just  7 quick questions before we  we start your first lesson!',
                   ),
                 ),
 
                 // Image (PNG or SVG)
                 DuolingoLogo(
-                  assetPath: 'assets/images/duo_birds/duobird8.svg',
+                  assetPath: 'assets/images/duo_birds/duobirdbg1.svg',
                   width: 200,
-                  height: 250,
+                  height: 200,
                 ),
               ],
             ),
