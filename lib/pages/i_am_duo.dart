@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:triolingo/pages/I_am_duo2.dart';
+
+import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
-class IamDuo2 extends StatefulWidget {
-  const IamDuo2({super.key});
+class IamDuo extends StatefulWidget {
+  const IamDuo({super.key});
 
   @override
-  State<IamDuo2> createState() => _IamDuoState();
+  State<IamDuo> createState() => _IamDuoState();
 }
 
-class _IamDuoState extends State<IamDuo2> {
+class _IamDuoState extends State<IamDuo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+        foregroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
@@ -25,17 +31,15 @@ class _IamDuoState extends State<IamDuo2> {
               children: [
                 // Speech Bubble using the reusable widget
                 const Positioned(
-                  top: -40,
-                  child: PopupTextMessage(
-                    message:
-                        'Just 7 quick question before we start first lesson! ',
-                  ),
+                  top: -30,
+                  child: PopupTextMessage(message: 'Hi there, im duo, '),
                 ),
 
                 // Image (PNG or SVG)
-                SvgPicture.asset(
-                  'assets/images/duo_birds/duobird8.svg', // Replace with your own image path
+                DuolingoLogo(
+                  assetPath: 'assets/images/duo_birds/duobirdbg1.svg',
                   width: 200,
+                  height: 200,
                 ),
               ],
             ),
@@ -44,7 +48,15 @@ class _IamDuoState extends State<IamDuo2> {
           const Expanded(flex: 1, child: SizedBox()),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(text: 'CONTINUE', onPressed: () {}),
+            child: PrimaryButton(
+              text: 'CONTINUE',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => IAmDuo2()),
+                );
+              },
+            ),
           ),
         ],
       ),

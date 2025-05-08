@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:triolingo/pages/IAm_duo2.dart';
+import 'package:triolingo/pages/progressbar/progress_bar_one.dart';
+import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
-class IamDuo extends StatefulWidget {
-  const IamDuo({super.key});
+class IAmDuo2 extends StatefulWidget {
+  const IAmDuo2({super.key});
 
   @override
-  State<IamDuo> createState() => _IamDuoState();
+  State<IAmDuo2> createState() => _IAmDuo2State();
 }
 
-class _IamDuoState extends State<IamDuo> {
+class _IAmDuo2State extends State<IAmDuo2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E),
+      backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+        foregroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
@@ -26,14 +30,19 @@ class _IamDuoState extends State<IamDuo> {
               children: [
                 // Speech Bubble using the reusable widget
                 const Positioned(
-                  top: -40,
-                  child: PopupTextMessage(message: 'Hi there, im duo, '),
+                  top: -50,
+                  child: PopupTextMessage(
+                    maxWidth: 290,
+                    message:
+                        'just  7 quick questions before we \nstart your first lesson!',
+                  ),
                 ),
 
                 // Image (PNG or SVG)
-                SvgPicture.asset(
-                  'assets/images/duo_birds/duobirdbg1.svg', // Replace with your own image path
+                DuolingoLogo(
+                  assetPath: 'assets/images/duo_birds/duobirdbg1.svg',
                   width: 200,
+                  height: 200,
                 ),
               ],
             ),
@@ -47,7 +56,7 @@ class _IamDuoState extends State<IamDuo> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => IamDuo2()),
+                  MaterialPageRoute(builder: (context) => ProgressBarOne()),
                 );
               },
             ),
