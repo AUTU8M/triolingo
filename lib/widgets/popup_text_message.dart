@@ -14,15 +14,16 @@ class PopupTextMessage extends StatelessWidget {
 
   const PopupTextMessage({
     required this.message,
-    this.borderColor = const Color.fromRGBO(225, 225, 225, .8),
+    this.borderColor = const Color.fromARGB(204, 102, 100, 100),
     this.borderWidth = 2.0,
     this.padding = const EdgeInsets.fromLTRB(16, 12, 16, 12),
     this.textStyle = const TextStyle(
-      color: Color.fromRGBO(123, 145, 155, 1),
+      color: Color.fromRGBO(220, 224, 226, 1),
       fontSize: 16,
     ),
     this.tailWidth = 20,
     this.tailHeight = 15,
+
     this.borderRadius = 16,
     this.maxWidth = 250,
     this.tailPositionRatio = 0.5,
@@ -45,6 +46,7 @@ class PopupTextMessage extends StatelessWidget {
               borderColor: borderColor,
               borderWidth: borderWidth,
               borderRadius: borderRadius,
+
               tailWidth: tailWidth,
               tailHeight: tailHeight,
               tailPositionRatio: tailPositionRatio,

@@ -16,6 +16,10 @@ class _IAmDuo2State extends State<IAmDuo2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+        foregroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
@@ -26,10 +30,11 @@ class _IAmDuo2State extends State<IAmDuo2> {
               children: [
                 // Speech Bubble using the reusable widget
                 const Positioned(
-                  top: -40,
+                  top: -50,
                   child: PopupTextMessage(
+                    maxWidth: 290,
                     message:
-                        'just  7 quick questions before we  we start your first lesson!',
+                        'just  7 quick questions before we \nstart your first lesson!',
                   ),
                 ),
 

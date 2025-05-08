@@ -13,12 +13,14 @@ class OutlinedtypaButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: 50,
       width: double.infinity,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           foregroundColor: Pallete.buttonMainColor,
           side: BorderSide(color: Color.fromARGB(255, 66, 66, 65), width: 1.7),
+
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),

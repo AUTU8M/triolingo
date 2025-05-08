@@ -17,6 +17,10 @@ class _IamDuoState extends State<IamDuo> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(19, 31, 34, 1),
+        foregroundColor: Colors.white,
+      ),
       body: Column(
         children: [
           const Expanded(flex: 1, child: SizedBox()),
@@ -27,7 +31,7 @@ class _IamDuoState extends State<IamDuo> {
               children: [
                 // Speech Bubble using the reusable widget
                 const Positioned(
-                  top: -40,
+                  top: -30,
                   child: PopupTextMessage(message: 'Hi there, im duo, '),
                 ),
 
