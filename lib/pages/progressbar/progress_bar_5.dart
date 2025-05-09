@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/pages/progressbar/progress_bar_5.dart';
 import 'package:triolingo/widgets/cloud_text_left.dart';
 import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/primary_button.dart';
 
-class ProgressBar4 extends StatelessWidget {
-  const ProgressBar4({super.key});
+class ProgressBar5 extends StatelessWidget {
+  const ProgressBar5({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class ProgressBar4 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
-        title: Text('4'),
+        title: Text('5 '),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,9 +24,9 @@ class ProgressBar4 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 DuolingoLogo(
-                  assetPath: 'assets/images/duo_birds/duobirdbg4.svg',
+                  assetPath: 'assets/images/duo_birds/duobirdDefult.svg',
                   width: 100,
-                  height: 130,
+                  height: 100,
                 ),
                 SizedBox(width: 14),
                 ChatBubble(

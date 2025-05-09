@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/utils/progress_bar_2_list.dart';
+import 'package:triolingo/pages/progressbar/progress_bar_4.dart';
 import 'package:triolingo/utils/progress_bar_3_list.dart';
 import 'package:triolingo/widgets/cloud_text_left.dart';
 import 'package:triolingo/widgets/duolingo_logo.dart';
@@ -33,7 +33,7 @@ class _ProgressBar2State extends State<ProgressBar3> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 DuolingoLogo(
-                  assetPath: 'assets/images/duo_birds/duobird3.svg',
+                  assetPath: 'assets/images/duo_birds/duobirdbg6.svg',
                   width: 100,
                   height: 130,
                 ),
@@ -76,7 +76,7 @@ class _ProgressBar2State extends State<ProgressBar3> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBar3()),
+                  MaterialPageRoute(builder: (context) => ProgressBar4()),
                 );
               },
             ),
