@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/pages/progressbar/progress_bar_one.dart';
+import 'package:triolingo/pages/progressbar/progress_bar_1.dart';
 import 'package:triolingo/widgets/duolingo_logo.dart';
 import 'package:triolingo/widgets/popup_text_message.dart';
 import 'package:triolingo/widgets/primary_button.dart';

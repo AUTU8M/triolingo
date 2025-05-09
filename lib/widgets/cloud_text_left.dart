@@ -49,7 +49,7 @@ class ChatBubble extends StatelessWidget {
     this.maxWidth,
     this.padding = const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
     this.borderRadius = 20.0,
-    this.fontSize = 14.0,
+    this.fontSize = 15.0,
     this.borderWidth = 1.0,
     this.showTail = true,
     this.tailSize = const Size(10, 16),

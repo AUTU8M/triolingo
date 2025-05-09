@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/pages/progressbar/progress_bar_2.dart';
 import 'package:triolingo/utils/language_data.dart';
 import 'package:triolingo/widgets/cloud_text_left.dart';
 import 'package:triolingo/widgets/duolingo_logo.dart';
@@ -15,6 +16,7 @@ class ProgressBarOne extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
+        title: Text('1'),
       ),
       body: SafeArea(
         child: Column(
@@ -69,7 +71,15 @@ class ProgressBarOne extends StatelessWidget {
                 ],
               ),
             ),
-            PrimaryButton(text: 'CONTINUE', onPressed: () {}),
+            PrimaryButton(
+              text: 'CONTINUE',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProgressBar2()),
+                );
+              },
+            ),
           ],
         ),
       ),
