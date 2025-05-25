@@ -47,7 +47,7 @@ class ChatBubble extends StatelessWidget {
     this.borderColor = const Color(0xFF30363D),
     this.textColor = Colors.white,
     this.maxWidth,
-    this.padding = const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+    this.padding = const EdgeInsets.symmetric(horizontal: 14.0, vertical: 12.0),
     this.borderRadius = 20.0,
     this.fontSize = 15.0,
     this.borderWidth = 1.0,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_5.dart';
+import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_9.dart';
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
 
-class ProgressBar4 extends StatelessWidget {
-  const ProgressBar4({super.key});
+class ProgressBar8 extends StatelessWidget {
+  const ProgressBar8({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ProgressBar4 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
-        title: Text('4'),
+        title: Text('8 '),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,10 +27,13 @@ class ProgressBar4 extends StatelessWidget {
                 DuolingoLogo(
                   assetPath: 'assets/images/duo_birds/duobirdbg4.svg',
                   width: 100,
-                  height: 130,
+                  height: 100,
                 ),
                 SizedBox(width: 14),
-                ChatBubble(message: "Okay, we'll start fresh!", borderWidth: 2),
+                ChatBubble(
+                  message: "That's 50 words in your first \nweek!",
+                  borderWidth: 2,
+                ),
               ],
             ),
           ),
@@ -42,7 +45,7 @@ class ProgressBar4 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBar5()),
+                  MaterialPageRoute(builder: (context) => ProgressBar9()),
                 );
               },
             ),

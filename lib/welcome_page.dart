@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/features/onboarding/view/login_page.dart';
+import 'package:triolingo/login_page.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});

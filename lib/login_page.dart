@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/features/onboarding/view/i_am_duo.dart';
-import '../../../core/theme/pallete.dart';
+import 'package:triolingo/features/onboarding/view/pages/welcome/i_am_duo.dart';
+import 'core/theme/pallete.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/outlinedtypa_button.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';

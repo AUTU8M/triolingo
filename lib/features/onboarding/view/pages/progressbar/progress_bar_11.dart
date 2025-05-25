@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_5.dart';
+import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_12.dart';
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
 
-class ProgressBar4 extends StatelessWidget {
-  const ProgressBar4({super.key});
+class ProgressBar11 extends StatelessWidget {
+  const ProgressBar11({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class ProgressBar4 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
-        title: Text('4'),
+        title: Text('11 '),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,12 +25,16 @@ class ProgressBar4 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 DuolingoLogo(
-                  assetPath: 'assets/images/duo_birds/duobirdbg4.svg',
+                  assetPath: 'assets/images/duo_birds/duobirdDefult.svg',
                   width: 100,
-                  height: 130,
+                  height: 100,
                 ),
                 SizedBox(width: 14),
-                ChatBubble(message: "Okay, we'll start fresh!", borderWidth: 2),
+                ChatBubble(
+                  message:
+                      "Press and hold on your home\nscreen and add our widget.",
+                  borderWidth: 2,
+                ),
               ],
             ),
           ),
@@ -42,7 +46,7 @@ class ProgressBar4 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBar5()),
+                  MaterialPageRoute(builder: (context) => ProgressBar12()),
                 );
               },
             ),

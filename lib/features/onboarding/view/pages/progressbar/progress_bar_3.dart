@@ -37,9 +37,9 @@ class _ProgressBar2State extends State<ProgressBar3> {
                   width: 100,
                   height: 130,
                 ),
-                SizedBox(width: 14),
+                SizedBox(width: 3),
                 ChatBubble(
-                  message: 'How did you hear about \nDuolingo?',
+                  message: 'How much japanese do you\nDuolingo?',
                   borderWidth: 2,
                 ),
               ],

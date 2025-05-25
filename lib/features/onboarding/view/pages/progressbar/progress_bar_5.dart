@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_6.dart';
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
@@ -30,7 +31,7 @@ class ProgressBar5 extends StatelessWidget {
                 ),
                 SizedBox(width: 14),
                 ChatBubble(
-                  message: 'How much japanese do you \nknow?',
+                  message: 'Those are all great reasons to \nlearn!',
                   borderWidth: 2,
                 ),
               ],
@@ -44,7 +45,7 @@ class ProgressBar5 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBar5()),
+                  MaterialPageRoute(builder: (context) => ProgressBar6()),
                 );
               },
             ),

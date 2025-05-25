@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/features/onboarding/view/I_am_duo2.dart';
+import 'package:triolingo/features/onboarding/view/pages/welcome/I_am_duo2.dart';
 
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/popup_text_message.dart';
