@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/pages/progressbar/progress_bar_2.dart';
-import 'package:triolingo/utils/language_data.dart';
-import 'package:triolingo/widgets/cloud_text_left.dart';
-import 'package:triolingo/widgets/duolingo_logo.dart';
-import 'package:triolingo/widgets/primary_button.dart';
-import 'package:triolingo/widgets/reusable_language_list.dart';
+import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_2.dart';
+import 'package:triolingo/features/onboarding/view/utils/language_data.dart';
+import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
+import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
+import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
+import 'package:triolingo/features/onboarding/view/widgets/reusable_language_list.dart';
 
 class ProgressBarOne extends StatelessWidget {
   const ProgressBarOne({super.key});

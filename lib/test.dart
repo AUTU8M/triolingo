@@ -55,8 +55,7 @@ class SelectableListItem extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 6.0),
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.lightBlue[100] : Colors.grey[800],
-          borderRadius: BorderRadius.circular(12.0),
+          color: isSelected ? Colors.lightBlue[100] : Colors.grey[800],          borderRadius: BorderRadius.circular(12.0),
           border: Border.all(
             color: isSelected ? Colors.blue[700]! : Colors.grey[700]!,
             width: 2.0,

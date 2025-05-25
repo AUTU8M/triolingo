@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/utils/language_item.dart'; // Needed for Icons like music_note, calculate
+import 'package:triolingo/features/onboarding/view/utils/language_item.dart'; // Needed for Icons like music_note, calculate
 // <-- Import the LanguageItem class from its new location
 
 final List<LanguageItem> languageItemsHindi = [

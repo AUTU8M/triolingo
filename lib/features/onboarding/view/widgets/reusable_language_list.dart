@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:country_flags/country_flags.dart';
-import 'package:triolingo/utils/language_item.dart'; // Assuming this is the correct path
+import 'package:triolingo/features/onboarding/view/utils/language_item.dart'; // Assuming this is the correct path
 
 // Reusable widget for displaying a list of languages/items
 // CORRECTED: Removed Expanded and internal ListView.builder.

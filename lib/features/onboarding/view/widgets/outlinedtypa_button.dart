@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/theme/pallete.dart';
+import '../../../../core/theme/pallete.dart';
 
-class PrimaryButton extends StatelessWidget {
+class OutlinedtypaButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  const PrimaryButton({super.key, required this.text, required this.onPressed});
+  const OutlinedtypaButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
       height: 50,
-      child: ElevatedButton(
+      width: double.infinity,
+      child: OutlinedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Pallete.buttonMainColor,
-          foregroundColor: Colors.black,
+        style: OutlinedButton.styleFrom(
+          foregroundColor: Pallete.buttonMainColor,
+          side: BorderSide(color: Color.fromARGB(255, 66, 66, 65), width: 1.7),
+
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),

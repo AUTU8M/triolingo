@@ -1,23 +1,23 @@
 {
+    "cmake.sourceDirectory": "C:/Dev/CODES/APPS/triolingo/linux",
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#3c3a77",
-        "activityBar.background": "#3c3a77",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#ab5654",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "commandCenter.border": "#e7e7e799",
-        "panel.border": "#3c3a77",
-        "sash.hoverBorder": "#3c3a77",
-        "statusBar.background": "#2b2955",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#3c3a77",
-        "statusBarItem.remoteBackground": "#2b2955",
-        "statusBarItem.remoteForeground": "#e7e7e7",
-        "titleBar.activeBackground": "#2b2955",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#2b295599",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "cmake.sourceDirectory": "C:/Dev/CODES/APPS/triolingo/linux"
+        "activityBar.activeBackground": "#9b9ea2",
+        "activityBar.background": "#9b9ea2",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#f7e7ee",
+        "activityBarBadge.foreground": "#15202b",
+        "commandCenter.border": "#15202b99",
+        "panel.border": "#9b9ea2",
+        "sash.hoverBorder": "#9b9ea2",
+        "statusBar.background": "#818589",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#686b6f",
+        "statusBarItem.remoteBackground": "#818589",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#818589",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#81858999",
+        "titleBar.inactiveForeground": "#15202b99"
+    }
 }

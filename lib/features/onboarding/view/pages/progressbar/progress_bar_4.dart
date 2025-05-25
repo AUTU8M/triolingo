@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/widgets/cloud_text_left.dart';
-import 'package:triolingo/widgets/duolingo_logo.dart';
-import 'package:triolingo/widgets/primary_button.dart';
+import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_5.dart';
+import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
+import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
+import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
 
-class ProgressBar5 extends StatelessWidget {
-  const ProgressBar5({super.key});
+class ProgressBar4 extends StatelessWidget {
+  const ProgressBar4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class ProgressBar5 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.white,
-        title: Text('5 '),
+        title: Text('4'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,9 +25,9 @@ class ProgressBar5 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 DuolingoLogo(
-                  assetPath: 'assets/images/duo_birds/duobirdDefult.svg',
+                  assetPath: 'assets/images/duo_birds/duobirdbg4.svg',
                   width: 100,
-                  height: 100,
+                  height: 130,
                 ),
                 SizedBox(width: 14),
                 ChatBubble(

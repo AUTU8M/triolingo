@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/pages/progressbar/progress_bar_1.dart';
-import 'package:triolingo/widgets/duolingo_logo.dart';
-import 'package:triolingo/widgets/popup_text_message.dart';
-import 'package:triolingo/widgets/primary_button.dart';
+import 'package:triolingo/features/onboarding/view/I_am_duo2.dart';
 
-class IAmDuo2 extends StatefulWidget {
-  const IAmDuo2({super.key});
+import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
+import 'package:triolingo/features/onboarding/view/widgets/popup_text_message.dart';
+import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
+
+class IamDuo extends StatefulWidget {
+  const IamDuo({super.key});
 
   @override
-  State<IAmDuo2> createState() => _IAmDuo2State();
+  State<IamDuo> createState() => _IamDuoState();
 }
 
-class _IAmDuo2State extends State<IAmDuo2> {
+class _IamDuoState extends State<IamDuo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +31,8 @@ class _IAmDuo2State extends State<IAmDuo2> {
               children: [
                 // Speech Bubble using the reusable widget
                 const Positioned(
-                  top: -50,
-                  child: PopupTextMessage(
-                    maxWidth: 290,
-                    message:
-                        'just  7 quick questions before we \nstart your first lesson!',
-                  ),
+                  top: -30,
+                  child: PopupTextMessage(message: 'Hi there, im duo, '),
                 ),
 
                 // Image (PNG or SVG)
@@ -56,7 +53,7 @@ class _IAmDuo2State extends State<IAmDuo2> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBarOne()),
+                  MaterialPageRoute(builder: (context) => IAmDuo2()),
                 );
               },
             ),
