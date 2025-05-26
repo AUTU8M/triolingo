@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_8.dart';
-import 'package:triolingo/features/onboarding/view/utils/progress_bar_5_list.dart';
 import 'package:triolingo/features/onboarding/view/utils/progress_bar_7_list.dart';
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';

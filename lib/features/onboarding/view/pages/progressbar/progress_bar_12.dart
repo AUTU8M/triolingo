@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_13.dart';
+import 'package:triolingo/features/onboarding/view/utils/progress_bar_12_list.dart';
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
+import 'package:triolingo/features/onboarding/view/widgets/progress_list_tile_second.dart';
 
-class ProgressBar12 extends StatelessWidget {
+class ProgressBar12 extends StatefulWidget {
   const ProgressBar12({super.key});
 
   @override
+  State<ProgressBar12> createState() => _ProgressBar12State();
+}
+
+class _ProgressBar12State extends State<ProgressBar12> {
+  @override
   Widget build(BuildContext context) {
+    String? selectedOption;
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(19, 31, 34, 1),
       appBar: AppBar(
@@ -28,7 +38,7 @@ class ProgressBar12 extends StatelessWidget {
                   width: 100,
                   height: 100,
                 ),
-                SizedBox(width: 14),
+                SizedBox(width: 4),
                 ChatBubble(
                   message: "Here's what you can achive in 3\nmonths!",
                   borderWidth: 2,
@@ -36,6 +46,31 @@ class ProgressBar12 extends StatelessWidget {
               ],
             ),
           ),
+          // Options list
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: ListView.builder(
+                itemCount: twelvethlistinfo.length,
+                itemBuilder: (context, index) {
+                  return ProgressListTileSecond(
+                    icon: twelvethlistinfo[index]['icon'],
+                    iconColor: twelvethlistinfo[index]['iconColor'],
+                    text: twelvethlistinfo[index]['text'],
+                    text1: twelvethlistinfo[index]['text1'],
+                    isSelected:
+                        selectedOption == twelvethlistinfo[index]['text'],
+                    onTap: () {
+                      setState(() {
+                        selectedOption = twelvethlistinfo[index]['text'];
+                      });
+                    },
+                  );
+                },
+              ),
+            ),
+          ),
+
           const Expanded(flex: 1, child: SizedBox()),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
@@ -44,7 +79,7 @@ class ProgressBar12 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBar12()),
+                  MaterialPageRoute(builder: (context) => ProgressBar13()),
                 );
               },
             ),
