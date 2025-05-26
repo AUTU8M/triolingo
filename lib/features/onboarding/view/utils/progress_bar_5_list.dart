@@ -23,7 +23,7 @@ final List<Map<String, dynamic>> fifthlistinfo = [
     'text': 'Boost my career',
   },
   {
-    'icon': Icons.flight_takeoff_outlined,
+    'icon': Icons.flight_takeoff,
     'iconColor': Colors.lightBlue,
     'text': 'Prepare for travel',
   },

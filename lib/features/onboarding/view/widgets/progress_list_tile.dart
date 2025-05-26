@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ProgressListTile extends StatelessWidget {
-  final IconData icon;
-  final Color iconColor;
+  final IconData? icon;
+  final Color? iconColor;
   final String text;
   final bool isSelected;
   final VoidCallback onTap;
 
   const ProgressListTile({
     super.key,
-    required this.icon,
-    required this.iconColor,
+    this.icon,
+    this.iconColor,
     required this.text,
     required this.isSelected,
     required this.onTap,
