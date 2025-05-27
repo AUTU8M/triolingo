@@ -4,6 +4,7 @@ import 'package:triolingo/features/onboarding/view/utils/language_data.dart';
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
+import 'package:triolingo/features/onboarding/view/widgets/progressbar_indicator.dart';
 import 'package:triolingo/features/onboarding/view/widgets/reusable_language_list.dart';
 
 class ProgressBarOne extends StatelessWidget {
@@ -13,11 +14,7 @@ class ProgressBarOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(19, 31, 34, 1),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
-        title: Text('1'),
-      ),
+      appBar: ProgressbarIndicator(curretPage: 1),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

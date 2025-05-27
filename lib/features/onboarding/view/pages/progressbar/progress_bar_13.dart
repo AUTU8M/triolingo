@@ -3,6 +3,7 @@ import 'package:triolingo/features/onboarding/view/pages/landing/last_page_progr
 import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
+import 'package:triolingo/features/onboarding/view/widgets/progressbar_indicator.dart';
 
 class ProgressBar13 extends StatelessWidget {
   const ProgressBar13({super.key});
@@ -11,11 +12,7 @@ class ProgressBar13 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(19, 31, 34, 1),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
-        title: Text('13'),
-      ),
+      appBar: ProgressbarIndicator(curretPage: 13),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

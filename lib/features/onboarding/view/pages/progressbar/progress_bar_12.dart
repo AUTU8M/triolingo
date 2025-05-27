@@ -5,6 +5,7 @@ import 'package:triolingo/features/onboarding/view/widgets/cloud_text_left.dart'
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
 import 'package:triolingo/features/onboarding/view/widgets/progress_list_tile_second.dart';
+import 'package:triolingo/features/onboarding/view/widgets/progressbar_indicator.dart';
 
 class ProgressBar12 extends StatefulWidget {
   const ProgressBar12({super.key});
@@ -20,11 +21,7 @@ class _ProgressBar12State extends State<ProgressBar12> {
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(19, 31, 34, 1),
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
-        title: Text('12'),
-      ),
+      appBar: ProgressbarIndicator(curretPage: 12),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
