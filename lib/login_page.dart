@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/features/auth/view/pages/signup_page.dart';
 import 'package:triolingo/features/onboarding/view/pages/landing/i_am_duo.dart';
 import 'core/theme/pallete.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
@@ -57,7 +58,12 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(height: 16),
                   OutlinedtypaButton(
                     text: 'I ALREADY HAVE AN ACCOUNT',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SignupPage()),
+                      );
+                    },
                   ),
                 ],
               ),

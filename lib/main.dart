@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/core/theme/theme.dart';
 
 import 'package:triolingo/welcome_page.dart';
 
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
       title: 'Duolingo Clone',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Color.fromRGBO(19, 31, 34, 1),
-      ),
+      theme: AppTheme.darkThemeMode,
 
       home: Homepage(),
     );
