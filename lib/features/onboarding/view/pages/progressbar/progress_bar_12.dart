@@ -52,7 +52,6 @@ class _ProgressBar12State extends State<ProgressBar12> {
                 itemBuilder: (context, index) {
                   return ProgressListTileSecond(
                     icon: twelvethlistinfo[index]['icon'],
-                    iconColor: twelvethlistinfo[index]['iconColor'],
                     text: twelvethlistinfo[index]['text'],
                     text1: twelvethlistinfo[index]['text1'],
                     isSelected:
@@ -68,7 +67,6 @@ class _ProgressBar12State extends State<ProgressBar12> {
             ),
           ),
 
-          const Expanded(flex: 1, child: SizedBox()),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
             child: PrimaryButton(

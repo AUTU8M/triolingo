@@ -7,6 +7,12 @@ class ProgressListTileSecond extends StatelessWidget {
   final String text1;
   final bool isSelected;
   final VoidCallback onTap;
+  final double height;
+  final double width;
+  final double iconsize;
+  final double sizeboxheight;
+  final double bordeRadiousWidth;
+  final Color borderColor;
 
   const ProgressListTileSecond({
     super.key,
@@ -16,6 +22,12 @@ class ProgressListTileSecond extends StatelessWidget {
     required this.text1,
     required this.isSelected,
     required this.onTap,
+    this.height = 24,
+    this.width = 36,
+    this.iconsize = 25,
+    this.sizeboxheight = 0,
+    this.bordeRadiousWidth = 0,
+    this.borderColor = Colors.transparent,
   });
 
   @override
@@ -29,50 +41,49 @@ class ProgressListTileSecond extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
-            color:
-                isSelected
-                    ? const Color.fromARGB(51, 128, 193, 236)
-                    : const Color.fromRGBO(19, 31, 34, 1),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color:
-                  isSelected
-                      ? const Color.fromARGB(255, 60, 136, 172)
-                      : const Color.fromARGB(255, 56, 62, 70),
-              width: 1.3,
-            ),
+            border: Border.all(width: bordeRadiousWidth, color: borderColor),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Row(
                 children: [
                   Container(
-                    width: 36,
-                    height: 36,
+                    width: width,
+                    height: height,
                     decoration: BoxDecoration(
                       color: iconColor,
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: Icon(icon, color: Colors.white, size: 20),
+                    child: Icon(icon, color: Colors.blue, size: iconsize),
                   ),
-                  const SizedBox(width: 12),
+                  const SizedBox(width: 30),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          text,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: sizeboxheight),
+                        Text(
+                          text1,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
-              ),
-              Text(
-                text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Text(
-                text1,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.normal,
-                ),
               ),
             ],
           ),
