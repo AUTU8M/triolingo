@@ -10,9 +10,9 @@ class Pallete {
   static const Color gradient1 = Color.fromRGBO(147, 230, 51, 1);
   static const Color gradient2 = Color.fromRGBO(147, 212, 57, 1);
   static const Color gradient3 = Color.fromRGBO(37, 185, 86, 1);
-  static const Color borderColor = Color.fromRGBO(52, 51, 67, 1);
   static const Color whiteColor = Colors.white;
-  static const Color greyColor = Colors.grey;
+  static const Color greyColor = Color.fromRGBO(56, 70, 79, 1);
+  static const Color borderColor = Color.fromRGBO(56, 71, 76, 1);
   static const Color errorColor = Colors.redAccent;
   static const Color transparentColor = Colors.transparent;
 

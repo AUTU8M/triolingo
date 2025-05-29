@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:triolingo/features/auth/view/widgets/outlinedtypa_button.dart';
+import 'package:triolingo/features/auth/view/widgets/phone_no_widget.dart';
+import 'package:triolingo/features/auth/view/widgets/sign_in_widget.dart';
 import 'package:triolingo/login_page.dart';
+import 'package:triolingo/test.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -35,6 +38,10 @@ class _SignupPageState extends State<SignupPage> {
       body: SafeArea(
         child: Column(
           children: [
+            PhoneNoWidget(),
+            SizedBox(height: 50),
+            SignInWidget(),
+
             OutlinedtypaButton(
               text: 'SIGN IN WITH GOOGLE',
               onPressed: () {},
