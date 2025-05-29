@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PhoneInputWidget extends StatelessWidget {
+  const PhoneInputWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

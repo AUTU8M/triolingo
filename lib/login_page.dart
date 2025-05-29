@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:triolingo/features/auth/view/pages/signup_page.dart';
+import 'package:triolingo/features/auth/view/pages/signin_page.dart';
 import 'package:triolingo/features/onboarding/view/pages/landing/i_am_duo.dart';
-import 'package:triolingo/test.dart';
 import 'core/theme/pallete.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/outlinedtypa_button.dart';
@@ -62,7 +61,7 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignupPage()),
+                        MaterialPageRoute(builder: (context) => SigninPage()),
                       );
                     },
                   ),

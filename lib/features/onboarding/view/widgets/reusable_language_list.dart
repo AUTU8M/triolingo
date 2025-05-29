@@ -73,9 +73,7 @@ class ReusableLanguageList extends StatelessWidget {
             ), // Add vertical spacing between items
             child: InkWell(
               // Use InkWell for tap effect
-              onTap: () {
-                print('Tapped on ${item.name}');
-              },
+              onTap: () {},
               borderRadius: BorderRadius.circular(itemBorderRadius),
               child: Container(
                 padding: itemPadding,
@@ -112,7 +110,7 @@ class ReusableLanguageList extends StatelessWidget {
               ),
             ),
           );
-        }).toList(), // Convert the mapped iterable to a list of Widgets
+        }), // Convert the mapped iterable to a list of Widgets
       ],
     );
   }
