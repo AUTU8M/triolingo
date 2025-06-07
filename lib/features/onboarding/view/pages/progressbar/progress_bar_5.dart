@@ -70,17 +70,20 @@ class _ProgressBar2State extends State<ProgressBar5> {
             ),
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProgressBar6()),
-                );
-              },
-            ),
+          // Remove extra Padding around PrimaryButton
+          const SizedBox(height: 30),
+          PrimaryButton(
+            text: 'CONTINUE',
+            onPressed:
+                selectedOption == null
+                    ? null
+                    : () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProgressBar6()),
+                      );
+                    },
+            bottomPadding: 24,
           ),
         ],
       ),

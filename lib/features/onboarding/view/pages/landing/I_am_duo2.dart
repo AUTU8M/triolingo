@@ -49,17 +49,16 @@ class _IAmDuo2State extends State<IAmDuo2> {
           ),
           // Bottom spacer to push button to bottom
           const Expanded(flex: 1, child: SizedBox()),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProgressBarOne()),
-                );
-              },
-            ),
+          const SizedBox(height: 30),
+          PrimaryButton(
+            text: 'CONTINUE',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProgressBarOne()),
+              );
+            },
+            bottomPadding: 24, // Add bottom padding for spacing from screen edge
           ),
         ],
       ),

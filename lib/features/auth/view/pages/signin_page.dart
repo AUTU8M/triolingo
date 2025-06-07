@@ -4,6 +4,7 @@ import 'package:triolingo/features/auth/view/widgets/outlinedtypa_button.dart';
 import 'package:triolingo/features/auth/view/widgets/phone_no_widget.dart';
 import 'package:triolingo/features/auth/view/widgets/sign_in_widget.dart';
 import 'package:triolingo/login_page.dart';
+import 'package:triolingo/features/auth/view/pages/email_signin_page.dart';
 
 class SigninPage extends StatefulWidget {
   const SigninPage({super.key});
@@ -15,6 +16,8 @@ class SigninPage extends StatefulWidget {
 class _SigninPageState extends State<SigninPage> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController otpController = TextEditingController();
+  bool isLoading = false;
+  String? errorMessage;
 
   @override
   void dispose() {
@@ -55,6 +58,15 @@ class _SigninPageState extends State<SigninPage> {
               ),
               SizedBox(height: 20),
               SignInWidget(),
+              SizedBox(height: 20),
+              if (errorMessage != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text(
+                    errorMessage!,
+                    style: TextStyle(color: Colors.red),
+                  ),
+                ),
               Expanded(
                 child: Container(),
               ), // This pushes the rest to the bottom
@@ -72,7 +84,14 @@ class _SigninPageState extends State<SigninPage> {
               SizedBox(height: 10),
               OutlinedtypaButton(
                 text: 'SIGN IN WITH EMAIL',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EmailSignInPage(),
+                    ),
+                  );
+                },
                 buttonIcon: Icon(Icons.mail),
               ),
               SizedBox(height: 10),

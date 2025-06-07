@@ -66,18 +66,16 @@ class _ProgressBar12State extends State<ProgressBar12> {
               ),
             ),
           ),
-
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProgressBar13()),
-                );
-              },
-            ),
+          const SizedBox(height: 30),
+          PrimaryButton(
+            text: 'CONTINUE',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProgressBar13()),
+              );
+            },
+            bottomPadding: 24, // Add bottom padding for spacing from screen edge
           ),
         ],
       ),

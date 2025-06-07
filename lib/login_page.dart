@@ -43,30 +43,27 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-              child: Column(
-                children: [
-                  PrimaryButton(
-                    text: 'GET STARTED',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const IamDuo()),
-                      );
-                    },
-                  ),
-                  const SizedBox(height: 16),
-                  OutlinedtypaButton(
-                    text: 'I ALREADY HAVE AN ACCOUNT',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignupPage()),
-                      );
-                    },
-                  ),
-                ],
+            const SizedBox(height: 30),
+            PrimaryButton(
+              text: 'GET STARTED',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const IamDuo()),
+                );
+              },
+            ),
+            const SizedBox(height: 16),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedtypaButton(
+                text: 'I ALREADY HAVE AN ACCOUNT',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SigninPage()),
+                  );
+                },
               ),
             ),
           ],

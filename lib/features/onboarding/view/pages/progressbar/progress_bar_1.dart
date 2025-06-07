@@ -7,8 +7,21 @@ import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
 import 'package:triolingo/features/onboarding/view/widgets/progressbar_indicator.dart';
 import 'package:triolingo/features/onboarding/view/widgets/reusable_language_list.dart';
 
-class ProgressBarOne extends StatelessWidget {
+class ProgressBarOne extends StatefulWidget {
   const ProgressBarOne({super.key});
+
+  @override
+  State<ProgressBarOne> createState() => _ProgressBarOneState();
+}
+
+class _ProgressBarOneState extends State<ProgressBarOne> {
+  String? selectedLanguage;
+
+  void onLanguageSelected(String language) {
+    setState(() {
+      selectedLanguage = language;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +48,6 @@ class ProgressBarOne extends StatelessWidget {
                 ],
               ),
             ),
-
             Expanded(
               child: ListView(
                 children: [
@@ -44,38 +56,41 @@ class ProgressBarOne extends StatelessWidget {
                     listTitle: 'For Hindi speakers',
                     itemBorderColor: const Color(0xFF30363D),
                     itemBorderWidth: 2,
+                    selectedLanguage: selectedLanguage,
+                    onLanguageSelected: onLanguageSelected,
                   ),
-                  // Added spacing between the two lists
                   const SizedBox(height: 20),
                   ReusableLanguageList(
-                    items:
-                        languageItemsEng, // Use the list from language_data.dart
+                    items: languageItemsEng,
                     listTitle: 'For English speakers',
                     itemBorderColor: const Color(0xFF30363D),
                     itemBorderWidth: 2,
+                    selectedLanguage: selectedLanguage,
+                    onLanguageSelected: onLanguageSelected,
                   ),
-
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 20.0,
                       right: 20.0,
                       top: 30.0,
                       bottom: 10.0,
-                    ), // Adjusted bottom padding
+                    ),
                   ),
-
                   const SizedBox(height: 10),
                 ],
               ),
             ),
+            const SizedBox(height: 30),
             PrimaryButton(
               text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProgressBar2()),
-                );
-              },
+              onPressed: selectedLanguage == null
+                  ? null
+                  : () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ProgressBar2()),
+                      );
+                    },
             ),
           ],
         ),

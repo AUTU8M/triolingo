@@ -15,9 +15,9 @@ class ProgressBar13 extends StatefulWidget {
 }
 
 class _ProgressBar13State extends State<ProgressBar13> {
+  String? selectedOption;
   @override
   Widget build(BuildContext context) {
-    String? selectedOption;
     return Scaffold(
       backgroundColor: const Color.fromRGBO(19, 31, 34, 1),
       appBar: ProgressbarIndicator(curretPage: 13),
@@ -58,7 +58,10 @@ class _ProgressBar13State extends State<ProgressBar13> {
                     iconsize: 50,
                     sizeboxheight: 6,
                     bordeRadiousWidth: 1.7,
-                    borderColor: Color.fromARGB(204, 102, 100, 100),
+                    borderColor:
+                        selectedOption == thirteenthlistinfo[index]['text']
+                            ? Color.fromARGB(255, 60, 136, 172)
+                            : Color.fromARGB(204, 102, 100, 100),
                     icon: thirteenthlistinfo[index]['icon'],
                     text: thirteenthlistinfo[index]['text'],
                     text1: thirteenthlistinfo[index]['text1'],
@@ -74,17 +77,21 @@ class _ProgressBar13State extends State<ProgressBar13> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LastPageProgress()),
-                );
-              },
-            ),
+          const SizedBox(height: 30),
+          PrimaryButton(
+            text: 'CONTINUE',
+            onPressed:
+                selectedOption == null
+                    ? null
+                    : () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LastPageProgress(),
+                        ),
+                      );
+                    },
+            bottomPadding: 24,
           ),
         ],
       ),

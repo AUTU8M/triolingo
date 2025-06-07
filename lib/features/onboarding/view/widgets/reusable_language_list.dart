@@ -16,6 +16,8 @@ class ReusableLanguageList extends StatelessWidget {
   final TextStyle itemTextStyle;
   final double iconSize;
   final double flagSize;
+  final String? selectedLanguage;
+  final void Function(String)? onLanguageSelected;
 
   const ReusableLanguageList({
     super.key,
@@ -36,6 +38,8 @@ class ReusableLanguageList extends StatelessWidget {
     ),
     this.iconSize = 28.0,
     this.flagSize = 28.0,
+    this.selectedLanguage,
+    this.onLanguageSelected,
   });
 
   @override
@@ -66,22 +70,30 @@ class ReusableLanguageList extends StatelessWidget {
           ),
         // Build the list items directly using map and spread into the Column's children
         ...items.map((item) {
+          final bool isSelected = selectedLanguage == item.name;
           return Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 16.0,
               vertical: 7.0,
             ), // Add vertical spacing between items
             child: InkWell(
-              // Use InkWell for tap effect
-              onTap: () {},
+              onTap: () {
+                if (onLanguageSelected != null) {
+                  onLanguageSelected!(item.name);
+                }
+              },
               borderRadius: BorderRadius.circular(itemBorderRadius),
               child: Container(
                 padding: itemPadding,
                 decoration: BoxDecoration(
-                  color: itemBackgroundColor,
+                  color: isSelected
+                      ? const Color.fromARGB(51, 128, 193, 236)
+                      : itemBackgroundColor,
                   borderRadius: BorderRadius.circular(itemBorderRadius),
                   border: Border.all(
-                    color: itemBorderColor,
+                    color: isSelected
+                        ? const Color.fromARGB(255, 60, 136, 172)
+                        : itemBorderColor,
                     width: itemBorderWidth,
                   ),
                 ),

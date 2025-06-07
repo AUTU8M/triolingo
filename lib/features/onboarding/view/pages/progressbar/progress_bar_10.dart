@@ -35,17 +35,16 @@ class ProgressBar10 extends StatelessWidget {
             ),
           ),
           const Expanded(flex: 1, child: SizedBox()),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ProgressBar11()),
-                );
-              },
-            ),
+          const SizedBox(height: 30),
+          PrimaryButton(
+            text: 'CONTINUE',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProgressBar11()),
+              );
+            },
+            bottomPadding: 24, // Add bottom padding for spacing from screen edge
           ),
         ],
       ),

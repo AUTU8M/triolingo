@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:triolingo/features/auth/view/pages/signup_page.dart';
 import 'package:triolingo/features/onboarding/view/pages/progressbar/progress_bar_1.dart';
 import 'package:triolingo/features/onboarding/view/widgets/duolingo_logo.dart';
 import 'package:triolingo/features/onboarding/view/widgets/popup_text_message.dart';
@@ -55,7 +56,7 @@ class _IAmDuo2State extends State<LastPageProgress> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ProgressBarOne()),
+                  MaterialPageRoute(builder: (context) => SignupPage()),
                 );
               },
             ),
