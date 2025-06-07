@@ -49,17 +49,15 @@ class _IAmDuo2State extends State<LastPageProgress> {
           ),
           // Bottom spacer to push button to bottom
           const Expanded(flex: 1, child: SizedBox()),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: PrimaryButton(
-              text: 'CONTINUE',
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SignupPage()),
-                );
-              },
-            ),
+          PrimaryButton(
+            text: 'CONTINUE',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SignupPage()),
+              );
+            },
+            bottomPadding: 24,
           ),
         ],
       ),

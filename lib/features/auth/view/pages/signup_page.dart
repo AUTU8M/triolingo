@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:triolingo/features/auth/view/widgets/outlinedtypa_button.dart';
+import 'package:triolingo/features/onboarding/view/widgets/primary_button.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SignupPage extends StatefulWidget {
@@ -59,24 +59,31 @@ class _SignupPageState extends State<SignupPage> {
         showDialog(
           context: context,
           barrierDismissible: false,
-          builder: (context) => AlertDialog(
-            title: const Text('Account Created'),
-            content: const Text('You have successfully created your account! Please check your email to verify your account.'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).pop(); // Go back to previous screen
-                },
-                child: const Text('OK'),
+          builder:
+              (context) => AlertDialog(
+                title: const Text('Account Created'),
+                content: const Text(
+                  'You have successfully created your account! Please check your email to verify your account.',
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pop(); // Go back to previous screen
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
               ),
-            ],
-          ),
         );
       } else {
         // user is null, likely due to email confirmation being required
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Check your email for confirmation link. Complete email verification before logging in.')),
+          SnackBar(
+            content: Text(
+              'Check your email for confirmation link. Complete email verification before logging in.',
+            ),
+          ),
         );
       }
     } catch (e) {
@@ -93,26 +100,44 @@ class _SignupPageState extends State<SignupPage> {
   Widget getStepContent() {
     switch (currentStep) {
       case 0:
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'How old are you?',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 24),
-            TextField(
-              controller: ageController,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                labelText: 'Age',
-                border: OutlineInputBorder(),
+        final canContinue = ageController.text.trim().isNotEmpty;
+        return SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'How old are you?',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
-            ),
-            const SizedBox(height: 24),
-          ],
+              const SizedBox(height: 24),
+              TextField(
+                controller: ageController,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Age',
+                  border: OutlineInputBorder(),
+                ),
+                onChanged: (_) => setState(() {}),
+              ),
+              const SizedBox(height: 24),
+              CustomFullWidthButton(
+                text: 'CONTINUE',
+                onPressed:
+                    canContinue
+                        ? () {
+                          setState(() => currentStep++);
+                        }
+                        : null,
+                bottomPadding: 24,
+              ),
+            ],
+          ),
         );
       case 1:
+        final canContinue =
+            nameController.text.trim().isNotEmpty &&
+            surnameController.text.trim().isNotEmpty;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -127,6 +152,7 @@ class _SignupPageState extends State<SignupPage> {
                 labelText: 'First Name',
                 border: OutlineInputBorder(),
               ),
+              onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 16),
             TextField(
@@ -135,11 +161,24 @@ class _SignupPageState extends State<SignupPage> {
                 labelText: 'Surname',
                 border: OutlineInputBorder(),
               ),
+              onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 24),
+            CustomFullWidthButton(
+              text: 'CONTINUE',
+              onPressed:
+                  canContinue
+                      ? () {
+                        setState(() => currentStep++);
+                      }
+                      : null,
+              bottomPadding: 24,
+            ),
           ],
         );
       case 2:
+        final email = emailController.text.trim();
+        final canContinue = email.isNotEmpty && isValidEmail(email);
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -155,11 +194,23 @@ class _SignupPageState extends State<SignupPage> {
                 labelText: 'Email',
                 border: OutlineInputBorder(),
               ),
+              onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 24),
+            PrimaryButton(
+              text: 'CONTINUE',
+              onPressed:
+                  canContinue
+                      ? () {
+                        setState(() => currentStep++);
+                      }
+                      : null,
+              bottomPadding: 0,
+            ),
           ],
         );
       case 3:
+        final canContinue = passwordController.text.trim().isNotEmpty;
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -185,26 +236,20 @@ class _SignupPageState extends State<SignupPage> {
                   },
                 ),
               ),
+              onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 24),
             if (errorMessage != null)
               Text(errorMessage!, style: TextStyle(color: Colors.red)),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: isLoading ? null : _signUp,
-                child:
-                    isLoading
-                        ? SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            color: Colors.white,
-                          ),
-                        )
-                        : Text('Sign Up'),
-              ),
+            CustomFullWidthButton(
+              text: 'CONTINUE',
+              onPressed:
+                  canContinue
+                      ? () {
+                        _signUp();
+                      }
+                      : null,
+              bottomPadding: 24,
             ),
           ],
         );
@@ -246,58 +291,6 @@ class _SignupPageState extends State<SignupPage> {
           children: [
             getStepContent(),
             const Spacer(),
-            OutlinedtypaButton(
-              text: currentStep == totalSteps - 1 ? 'CREATE PROFILE' : 'CONTINUE',
-              buttonIcon: currentStep == totalSteps - 1
-                  ? const Icon(Icons.check)
-                  : const Icon(null), // Remove the right arrow for the continue button by using an invisible icon
-              onPressed: () {
-                if (isLoading) return;
-                bool canContinue = false;
-                switch (currentStep) {
-                  case 0:
-                    canContinue = ageController.text.trim().isNotEmpty;
-                    break;
-                  case 1:
-                    canContinue = nameController.text.trim().isNotEmpty &&
-                        surnameController.text.trim().isNotEmpty;
-                    break;
-                  case 2:
-                    final email = emailController.text.trim();
-                    canContinue = email.isNotEmpty && isValidEmail(email);
-                    break;
-                  case 3:
-                    canContinue = passwordController.text.trim().isNotEmpty;
-                    break;
-                }
-                if (!canContinue) {
-                  setState(() {
-                    if (currentStep == 2) {
-                      final email = emailController.text.trim();
-                      if (email.isEmpty) {
-                        errorMessage = 'Please fill in all required fields.';
-                      } else if (!isValidEmail(email)) {
-                        errorMessage = 'You have entered an invalid email address.';
-                      } else {
-                        errorMessage = 'Please fill in all required fields.';
-                      }
-                    } else {
-                      errorMessage = 'Please fill in all required fields.';
-                    }
-                  });
-                  return;
-                }
-                setState(() {
-                  errorMessage = null;
-                });
-                if (currentStep < totalSteps - 1) {
-                  setState(() => currentStep++);
-                } else {
-                  _signUp();
-                }
-              },
-            ),
-            const SizedBox(height: 16),
             Center(
               child: Text(
                 'By signing in to Duolingo, you agree to our Terms and Privacy Policy.',
@@ -306,6 +299,43 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomFullWidthButton extends StatelessWidget {
+  final String text;
+  final VoidCallback? onPressed;
+  final double bottomPadding;
+  const CustomFullWidthButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    this.bottomPadding = 24,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: bottomPadding),
+      child: SizedBox(
+        width: double.infinity,
+        height: 48,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromRGBO(147, 211, 51, 1),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            textStyle: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          onPressed: onPressed,
+          child: Text(text),
         ),
       ),
     );
